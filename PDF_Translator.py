@@ -32,10 +32,11 @@ def translate():
 			print("Sorry, The Translation cant happen Now.Please Try again after some Time.....")
 	return final_data
 
-ok = translate()
-print(ok)
-with open(filename2 +".pdf", mode = "w") as finale:
-	finale.write(ok)
-	finale.save()
-print("Your new file is saved...")
-file.close()
+if __name__ == "__main__":
+	translated_pdf = translate()
+	print(translated_pdf)
+	finle = open(filename2+".pdf", mode="wb")
+	p.PdfFileWriter.write(finle,translated_pdf)
+	finle.save()
+	print("Your new file is saved...")
+	file.close()
